@@ -1,0 +1,40 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 30vh 0;
+}
+
+.input__section > label {
+    font-size: 18px;
+}
+
+.input__section > input{
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    font-size: 18px;
+}
+
+.btn{
+    cursor: pointer;
+    padding: .8rem 2rem;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: purple;
+    color: white;
+    font-size: 18px;
+}
+
+.btn:hover{
+    background-color: rgb(87, 3, 87);
+}
+
+.buttons__section{
+   margin-top: 2rem;
+   text-align: center;
+}
