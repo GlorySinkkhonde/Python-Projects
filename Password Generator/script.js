@@ -1,7 +1,9 @@
 // let passwordLength = document.querySelector('.passLen')
 const generateBtn = document.querySelector('.gen__btn')
+let finalPassword = document.querySelector('.final_password')
 
 generateBtn.addEventListener("click", async () =>{
+    
     
     try{
         const passwordLength = document.querySelector('.passLen').value
@@ -15,6 +17,8 @@ generateBtn.addEventListener("click", async () =>{
         })
 
         if (response.ok){
+            const data = await response.json()
+            finalPassword.value = data
             console.log("Data sent successfully")
         }else {
             console.log("Failed to send data:", response.status)
