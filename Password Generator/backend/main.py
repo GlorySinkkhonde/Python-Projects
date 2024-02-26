@@ -8,13 +8,32 @@
 
 
 
-from flask import Flask
+from flask import Flask, request, jsonify
+import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def hello():
-    return "My first Python backend! H"
+    return ("hello world")
+
+@app.route("/generator", methods=["POST"])
+def users():
+    print("users endpoint reached...")
+    data = request.json
+    password_length = data.get("passwordLength")
+    print("Received password length:", password_length)
+
+    return jsonify({"message": "Data received successfully"})
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS')
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
