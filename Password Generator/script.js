@@ -1,5 +1,6 @@
 // let passwordLength = document.querySelector('.passLen')
 const generateBtn = document.querySelector('.gen__btn')
+const acceptBtn = document.querySelector('.accept__btn')
 let finalPassword = document.querySelector('.final_password')
 
 generateBtn.addEventListener("click", async () =>{
@@ -29,4 +30,20 @@ generateBtn.addEventListener("click", async () =>{
 
   
 })
+
+acceptBtn.addEventListener("click", () =>{
+
+    const generatedPassword = document.querySelector('.final_password').value
+    console.log("hello word")
+
+    navigator.clipboard.writeText(generatedPassword)
+    .then(() => { 
+        window.alert("Password copied to clipboard: " + generatedPassword);
+    })
+    .catch((error) => {
+        console.error('Unable to copy text to clipboard:', error);
+    });
+})
+
+
 

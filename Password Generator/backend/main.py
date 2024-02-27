@@ -1,8 +1,16 @@
+# Get password length
+
+# Use it to generate random combination of text containing , letters, numbers and symbols
+
+# store the value in a variable
+
+# display the generated password on generated password input
 
 from flask import Flask, request, jsonify
 import json
 from flask_cors import CORS
 import string
+import random
 
 app = Flask(__name__)
 CORS(app)
@@ -17,7 +25,7 @@ def generator():
         return "This is the generator end."
     elif request.method == "POST":
         data = request.json
-        password_length = data.get("passwordLength")
+        password_length = int(data.get("passwordLength"))
         print("Received password length:", password_length)
         
         #Create a list of letters
@@ -35,8 +43,20 @@ def generator():
             if not character.isalnum():
                 symbols.append(character)
         
-        password = small_letters
-        print(capital_letters)
+        characters = small_letters + capital_letters + numbers + symbols
+              
+                #Return number of letters equal to the password length
+                #return a mixture of numbers, letters and symbols
+                
+        def generate_password(length):
+            password=''
+            while len(password) < length:
+                password += random.choice(characters)
+            return password[:length]
+        
+        password = generate_password(password_length)
+        
+        #Once password is accepted, copy to clipboard (use JS)
         
         return jsonify(password)
     
