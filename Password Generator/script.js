@@ -1,4 +1,3 @@
-// let passwordLength = document.querySelector('.passLen')
 const generateBtn = document.querySelector('.gen__btn')
 const acceptBtn = document.querySelector('.accept__btn')
 let finalPassword = document.querySelector('.final_password')
