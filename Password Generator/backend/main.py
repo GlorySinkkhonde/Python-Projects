@@ -46,8 +46,8 @@ def generator():
         
         characters = small_letters + capital_letters + numbers + symbols
               
-                #Return number of letters equal to the password length
-                #return a mixture of numbers, letters and symbols
+        #Return number of letters equal to the password length
+        #return a mixture of numbers, letters and symbols
                 
         def generate_password(length):
             password=''

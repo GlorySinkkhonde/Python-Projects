@@ -30,6 +30,8 @@ generateBtn.addEventListener("click", async () =>{
   
 })
 
+// Once password is accepted, copy to clipboard (use JS)
+
 acceptBtn.addEventListener("click", () =>{
 
     const generatedPassword = document.querySelector('.final_password').value
