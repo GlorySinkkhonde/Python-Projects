@@ -22,6 +22,7 @@ loginBtn.addEventListener("click", async () =>{
 
         if(response.ok){
             const data = await response.json()
+            window.location.href = "http://127.0.0.1:5000/account";
             console.log("Data sent successfully")
             
         }else {

@@ -52,8 +52,11 @@ def log_in():
                 # Store user data in session after successful login
                 session['logged_in'] = True
                 session['username'] = username
-                return jsonify("Login successful")
+                print("Login successful")
+                return jsonify({"message": "Login successful"})
+                
     
+    print("not successful")
     return jsonify("Error: Invalid username or password")
 
 @app.route('/account')
